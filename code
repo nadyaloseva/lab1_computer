@@ -11,25 +11,23 @@ void inverse(bool r) {
 	int a;
 	cin >> a;
 	for (int n = 30; n > a; n--) {
-		if (r == 1) r = 0
-		else r = 1;
-	} cout << r;
+		if (r == true) r = false;
+		else r = true;
+	} 
 
 	for (int n = a - 1; n > -1; n--) {
-		if (r == 1) r = 0
-		else r = 1;
-		cout << r;
+		if (r == true) r = false;
+		else r = true;
 	}
-
+	
 }
-
 
 
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	bool menu=true;
+	bool menu = true;
 	while (menu) {
 		int number;
 		cout << "Для работы с этой программой можно использовать только цифры." << endl;
@@ -63,10 +61,11 @@ int main()
 				inverse(r);
 				sum--;
 			}
+
 			for (n = 31; n > -1; n--) {
 				r = uni.k2 & (1U << n);
 				cout << r;
-			}
+			} cout << endl;
 		} break;
 
 		case 2: {
@@ -81,26 +80,25 @@ int main()
 			for (int i = a.size() - 1; i >= 0; --i) cout << a[i];
 
 			cout << endl;
-			cout << "Введите количество битов, которые не хотите инвертировать от 0 до " << a.size() << endl;
+			cout << "Введите количество битов, которые не хотите инвертировать от 0 до " << a.size()-1 << endl;
 			int sum;
 			cin >> sum;
 			while (sum > 0) {
-				cout << "Введите номер бита, который не хотите инвертировать в диапазоне от 0 до "<< a.size() << endl;
-				int k=0;
+				cout << "Введите номер бита, который не хотите инвертировать в диапазоне от 0 до " << (a.size()-1) << endl;
+				int k = 0;
 				cin >> k;
-				for (int i = a.size() - 1; i > k; --i) {
-				if (a[i]
-==1) a[i]=0
-else a[i]=1;
-				} 
+				for (int i = a.size()-1 ; i > k; --i) {
+					if (a[i] == 1) a[i] = 0;
+					if (a[i] == 0) a[i] = 1;
+
+				}
 				for (int i = k - 1; i > -1; n--) {
-					if (a[i]
-==1) a[i]=0
-else a[i]=1;
+					if (a[i] == 1) a[i] = 0;
+					if (a[i] == 0) a[i] = 1;
 				}
 				sum--;
-			} 
-			for (int i = a.size() - 1; i >= 0; --i) {
+			}
+			for (int i = a.size() - 1; i > -1; --i) { 
 				cout << a[i];
 			} cout << endl;
 
