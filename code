@@ -11,15 +11,18 @@ void inverse(bool r) {
 	int a;
 	cin >> a;
 	for (int n = 30; n > a; n--) {
-		r = rand() % 32;
+		if (r == 1) r = 0
+		else r = 1;
 	} cout << r;
 
 	for (int n = a - 1; n > -1; n--) {
-		r = rand() % 32;
+		if (r == 1) r = 0
+		else r = 1;
 		cout << r;
 	}
 
 }
+
 
 
 
@@ -86,10 +89,14 @@ int main()
 				int k=0;
 				cin >> k;
 				for (int i = a.size() - 1; i > k; --i) {
-					a[i] = rand() % 2;
+				if (a[i]
+==1) a[i]=0
+else a[i]=1;
 				} 
 				for (int i = k - 1; i > -1; n--) {
-					a[i] = rand() % 2;
+					if (a[i]
+==1) a[i]=0
+else a[i]=1;
 				}
 				sum--;
 			} 
