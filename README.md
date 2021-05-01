@@ -1,1 +1,1 @@
-# lab1_computer
+# typecast float and short int
